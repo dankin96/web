@@ -1,0 +1,51 @@
+{% extends 'ask/base.html' %}
+
+
+{% block content %}	
+	<h1 class="collumn-header">New Question</h1>
+          
+
+          <form class="form-horizontal">
+          <fieldset>
+
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="title-input">Title</label>  
+            <div class="col-md-10">
+            <input id="title-input" name="title-input" type="text" placeholder="Name your question" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="text-input">Text</label>
+            <div class="col-md-10">                     
+              <textarea class="form-control" id="text-input" placeholder="Ask everything you want" name="text-input"  required=""></textarea>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="tags-input">Tags</label>  
+            <div class="col-md-10">
+            <input id="tags-input" name="tags-input" type="text" placeholder="" class="form-control input-md">
+              
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="ask-button"></label>
+            <div class="col-md-4">
+              <button id="ask-button" name="ask-button" class="btn btn-inverse">Ask</button>
+            </div>
+          </div>
+
+          </fieldset>
+          </form>
+
+
+{% endblock content %}
+

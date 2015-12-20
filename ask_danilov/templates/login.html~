@@ -1,0 +1,43 @@
+        {% extends 'ask/base.html' %}
+	
+{% block content %}	
+
+	<h1 class="collumn-header">Log In</h1>
+          
+
+		<form class="form-horizontal">
+		<fieldset>
+
+
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="login-input">Login</label>  
+		  <div class="col-md-4 has-error">
+		  <input id="login-input" name="login-input" type="text" placeholder="Type in your login" class="form-control input-md" required="">
+		   <span id="helpBlock2" class="help-block">User doesn't exist</span>
+		  </div>
+		</div>
+
+		<!-- Password input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="password-input">Password</label>
+		  <div class="col-md-4">
+		    <input id="password-input" name="password-input" type="password" placeholder="...and your password" class="form-control input-md" required="">
+		    
+		  </div>
+		</div>
+
+		<!-- Button -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="login-button"></label>
+		  <div class="col-md-4">
+		    <button id="login-button" name="login-button" class="btn btn-inverse">Log In!</button>
+		    <a href="{% url 'signup' %}" name="register-button" class="link-button">Create new account</a>
+		  </div>
+		</div>
+
+		</fieldset>
+		</form>
+
+
+{% endblock content %}

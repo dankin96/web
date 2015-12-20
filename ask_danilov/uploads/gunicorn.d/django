@@ -1,0 +1,14 @@
+CONFIG = {
+	'mode': 'wsgi',
+	'working_dir': '/home/parallels/Documents/ask_danilov/ask_danilov',
+	'user': 'parallels',
+	'group': 'parallels',
+	'args': (
+		'--bind=localhost:8000',
+		'--workers=3',
+		'--timeout=60',
+		'--access-logfile=/home/parallels/Documents/access.log',
+		'--error-logfile=/home/parallels/Documents/error.log',
+		'ask_danilov.wsgi:application',
+	),
+}

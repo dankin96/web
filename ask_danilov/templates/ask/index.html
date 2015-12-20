@@ -1,0 +1,41 @@
+{% extends 'ask/base.html' %}
+
+{% block content  %}        
+	{% block content_header %}<h1 class="collumn-header">Questions</h1> {% endblock %}
+
+	{% block sort_type %} 
+	<span class="sort-type-header">Sort by:</span> <a class="sort-type-link active">Date</a><a href="{%url 'hot_index' %}" class="sort-type-link">Rating</a>
+	{% endblock %}
+				
+
+		{% for q in objects %}
+				<!-- Main component for a primary marketing message or call to action -->
+				<div class="question-preview jumbotron">
+					<h1 class="question-title">{{ q.title }}</h1>
+					<p class="question-text">{{ q.text }}</p>
+					<div class="question-author-info">
+						<img src="http://lorempixel.com/35/35/people" class="img-circle user-pic-small"><a href="#profile" class="author-name">Author</a>
+
+						<span class="author-name">|</span>
+						<span class="author-name">{{q.rating}}</span>
+
+						<a class="author-name" href="#like"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+						<a class="author-name" href="#like"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+
+						<a class="question-right-info" href="#answers"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{q.answers_count}} Answers
+						</a>
+
+						<span class="question-right-info">|</span>
+
+						<a class="question-right-info" href="#tag"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> Antonio</a>
+						<a class="question-right-info" href="#tag"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> iPhone</a>
+						<span class="question-right-info">01/01/2013</span>
+
+					</div>
+				</div>
+
+		{% endfor %}
+
+		{% include "ask/pagination.html" %}
+
+{% endblock content %}		
