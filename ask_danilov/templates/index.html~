@@ -1,0 +1,40 @@
+{% extends "ask/base.html" %}
+
+{% block content  %}        
+	{% block content_header %}<h1 class="collumn-header">Questions</h1> {% endblock %}
+         {% block sort_type %} <span class="sort-type-header">Sort by:</span> <a href="{%url 'index'  %}" class="sort-type-link active">Date</a>
+										<a href="{%url 'hot_index' %}" class="sort-type-link">Rating</a>{% endblock %}
+
+{% for question in objects %}        	
+      			<!-- Main component for a primary marketing message or call to action -->
+      			<div class="question-preview jumbotron">
+       				<a href="{%url 'answers' question.id %}"><h1 class="question-title">{{ question.title }}</h1></a>
+        			<p class="question-text">{{ question.text }}</p>
+	              <div class="question-author-info">
+	                <img src="http://lorempixel.com/35/35/" class="img-circle user-pic-small"><a href="#profile" class="author-name">Author</a>
+
+					<span class="author-name">|</span>
+					<span class="author-name">Rating: {{ question.rating }}</span>
+
+	                <a class="author-name" href="#like"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
+	                <a class="author-name" href="#like"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></a>
+
+	                <a class="question-right-info" href="{%url 'answers' question.id %}">
+				<span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ question.answers_count }} Answers
+	                </a>
+
+					<span class="question-right-info">|</span>
+
+	                <a class="question-right-info" href="{%url 'tag_index' 'Bender' %}"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Bender</a>
+	                <a class="question-right-info" href="{%url 'tag_index' 'BlackJack' %}"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> BlackJack</a>
+	                <span class="question-right-info">01/01/2015</span>
+
+	                </div>
+      			</div>
+
+{% endfor %}
+
+{% include "ask/pagination.html" %}
+
+{% endblock content %}
+	
